@@ -6,7 +6,7 @@
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 20:27:17 by ldurante          #+#    #+#             */
-/*   Updated: 2022/04/28 00:11:03 by ldurante         ###   ########.fr       */
+/*   Updated: 2022/04/28 09:37:30 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ class Form
 		int getExecuteGrade() const;
 		bool isSigned() const;
 		void beSigned(Bureaucrat &b);
+		virtual void execute(Bureaucrat const &executor) const = 0;
 
 		class GradeTooHighException : public std::exception
 		{
