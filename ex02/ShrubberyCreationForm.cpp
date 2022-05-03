@@ -6,7 +6,7 @@
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 00:06:39 by ldurante          #+#    #+#             */
-/*   Updated: 2022/04/28 09:21:10 by ldurante         ###   ########.fr       */
+/*   Updated: 2022/05/03 03:48:38 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,19 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator = (ShrubberyCreationForm 
 
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
-	
+	if (!this->isSigned())
+		throw Form::ExecuteException();
+	else if (executor.getGrade() > this->getSignGrade())
+		throw Form::GradeTooLowException();
+	else
+	{
+		std::string fullName;
+		fullName = this->m_target + "_shruberry";
+		std::ofstream file(fullName);
+		file << ASCII_TREES << std::endl << ASCII_TREE;
+		std::cout << "Form " << this->getName() << " Executed!" << std::endl;
+		file.close();
+	}
 }
 
 const std::string &ShrubberyCreationForm::getTarget() const

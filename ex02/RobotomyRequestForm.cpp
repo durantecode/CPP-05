@@ -6,7 +6,7 @@
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 00:06:33 by ldurante          #+#    #+#             */
-/*   Updated: 2022/04/28 09:28:17 by ldurante         ###   ########.fr       */
+/*   Updated: 2022/05/03 03:26:57 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,14 @@ RobotomyRequestForm &RobotomyRequestForm::operator = (RobotomyRequestForm const 
 
 void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {
-	
+	if (!this->isSigned())
+		throw Form::ExecuteException();
+	else if (executor.getGrade() > this->getSignGrade())
+		throw Form::GradeTooLowException();
+	else
+	{
+		std::cout << "EXECUTE!" << std::endl;
+	}
 }
 
 const std::string &RobotomyRequestForm::getTarget() const

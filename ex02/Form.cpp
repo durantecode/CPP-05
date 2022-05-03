@@ -6,7 +6,7 @@
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 20:27:02 by ldurante          #+#    #+#             */
-/*   Updated: 2022/04/27 23:30:36 by ldurante         ###   ########.fr       */
+/*   Updated: 2022/05/02 23:58:38 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,11 @@ const char *Form::GradeTooHighException::what() const throw()
 const char *Form::GradeTooLowException::what() const throw()
 {
 	return ("The grade is too low");
+}
+
+const char *Form::ExecuteException::what() const throw()
+{
+	return ("Form must be signed to be executed");
 }
 
 const std::string &Form::getName() const
