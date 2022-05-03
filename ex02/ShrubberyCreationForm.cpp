@@ -6,7 +6,7 @@
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 00:06:39 by ldurante          #+#    #+#             */
-/*   Updated: 2022/05/03 03:48:38 by ldurante         ###   ########.fr       */
+/*   Updated: 2022/05/03 18:39:07 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 		std::string fullName;
 		fullName = this->m_target + "_shruberry";
 		std::ofstream file(fullName);
-		file << ASCII_TREES << std::endl << ASCII_TREE;
-		std::cout << "Form " << this->getName() << " Executed!" << std::endl;
+		file << ASCII_TREE << ASCII_TREES << ASCII_TREE;
+		std::cout << "Form " << this->getName() << "  was executed succesfully!" << std::endl;
 		file.close();
 	}
 }

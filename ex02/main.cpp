@@ -6,7 +6,7 @@
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 17:14:08 by ldurante          #+#    #+#             */
-/*   Updated: 2022/05/03 03:10:51 by ldurante         ###   ########.fr       */
+/*   Updated: 2022/05/03 18:52:54 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,12 @@ int main(void)
 			std::cout << shrubbery << std::endl;
 			std::cout << robotomy << std::endl;
 			std::cout << pardon << std::endl;
+			
+			std::cout << "\n --------------------- \n\n";
 			shrubbery.execute(steve);
+			std::cout << "\n --------------------- \n\n";
 			robotomy.execute(steve);
+			std::cout << "\n --------------------- \n\n";
 			pardon.execute(steve);
 		}
 		catch (std::exception &e)
