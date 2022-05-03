@@ -6,7 +6,7 @@
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 17:14:08 by ldurante          #+#    #+#             */
-/*   Updated: 2022/05/03 18:52:54 by ldurante         ###   ########.fr       */
+/*   Updated: 2022/05/03 19:01:08 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ int main(void)
 			std::cout << shrubbery << std::endl;
 			std::cout << robotomy << std::endl;
 			std::cout << pardon << std::endl;
-			shrubbery.execute(mike);
-			robotomy.execute(mike);
-			pardon.execute(mike);
+			mike.executeForm(shrubbery);
+			mike.executeForm(robotomy);
+			mike.executeForm(pardon);
 		}
 		catch (std::exception &e)
 		{
@@ -57,7 +57,7 @@ int main(void)
 			std::cout << robotomy << std::endl;
 			std::cout << pardon << std::endl;
 			shrubbery.beSigned(jon);
-			shrubbery.execute(mike);
+			mike.executeForm(shrubbery);
 		}
 		catch (std::exception &e)
 		{
@@ -78,11 +78,11 @@ int main(void)
 			std::cout << pardon << std::endl;
 			
 			std::cout << "\n --------------------- \n\n";
-			shrubbery.execute(steve);
+			steve.executeForm(shrubbery);
 			std::cout << "\n --------------------- \n\n";
-			robotomy.execute(steve);
+			steve.executeForm(robotomy);
 			std::cout << "\n --------------------- \n\n";
-			pardon.execute(steve);
+			steve.executeForm(pardon);
 		}
 		catch (std::exception &e)
 		{

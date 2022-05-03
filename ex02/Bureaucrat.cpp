@@ -6,7 +6,7 @@
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 17:14:24 by ldurante          #+#    #+#             */
-/*   Updated: 2022/04/27 22:01:27 by ldurante         ###   ########.fr       */
+/*   Updated: 2022/05/03 19:09:49 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,19 @@ void Bureaucrat::signForm(const bool isSigned, const std::string formName)
 	{
 		std::cout << "Bureaucrat " << this->getName() << " could not sign Form ";
 		std::cout << formName << " because he doesn't have enough grade" << std::endl;
+	}
+}
+
+void Bureaucrat::executeForm(Form const &form)
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << this->getName() << " executed " << form.getName() << std::endl;
+	}
+	catch (std::exception& e)
+	{
+		std::cout << "Could not execute form" << std::endl;
 	}
 }
 

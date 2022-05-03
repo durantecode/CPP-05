@@ -6,7 +6,7 @@
 /*   By: ldurante <ldurante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 17:14:20 by ldurante          #+#    #+#             */
-/*   Updated: 2022/04/27 22:01:31 by ldurante         ###   ########.fr       */
+/*   Updated: 2022/05/03 19:08:14 by ldurante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 #include <iostream>
 #include <stdexcept>
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {
@@ -37,6 +40,7 @@ class Bureaucrat
 		void gradeUp();
 		void gradeDown();
 		void signForm(const bool isSigned, const std::string formName);
+		void executeForm(Form const & form);
 
 		class GradeTooHighException : public std::exception
 		{
